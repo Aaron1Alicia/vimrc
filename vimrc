@@ -7,69 +7,87 @@ set guifont=Monaco:h18
 "highlight search word by Aaron
 set hlsearch
 
-set nocompatible               " be viMproved, no compatible with vi
-filetype off                   " required!
-
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set nocompatible               " be viMproved, required for vundle 
+filetype off                   " required for vundle
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+"set rtp+=~/.vim/bundle/vundle/
+"call vundle#rc()
 
 " let Vundle manage Vundle
 " required! 
-Bundle 'gmarik/vundle'
+"Plugin 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 
-Bundle 'thoughtbot/vim-rspec'
-Bundle 'ack.vim'
-Bundle 'comments.vim'
-Bundle 'ctrlp.vim'
-Bundle 'scrooloose/nerdtree'
-Bundle 'delimitMate.vim'
+Plugin 'thoughtbot/vim-rspec'
+Plugin 'ack.vim'
+Plugin 'comments.vim'
+Plugin 'ctrlp.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'delimitMate.vim'
 "code commenter
-Bundle 'scrooloose/nerdcommenter' 
-Bundle 'rspec.vim'
-Bundle 'honza/vim-snippets'
-Bundle 'ervandew/supertab'
-Bundle 'scrooloose/syntastic'
-Bundle 'tpope/vim-bundler'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'flazz/vim-colorschemes'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-haml'
-Bundle 'tpope/vim-rails'
-Bundle 'nathanaelkane/vim-indent-guides'
-Bundle 'pangloss/vim-javascript'
-Bundle 'jelera/vim-javascript-syntax'
-Bundle 'briancollins/vim-jst'
-Bundle 'plasticboy/vim-markdown'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'slim-template/vim-slim'
-Bundle 'sudo.vim'
-Bundle 'xml.vim'
-Bundle 'ZenCoding.vim'
+Plugin 'scrooloose/nerdcommenter' 
+Plugin 'rspec.vim'
+Plugin 'honza/vim-snippets'
+Plugin 'ervandew/supertab'
+Plugin 'scrooloose/syntastic'
+Plugin 'tpope/vim-Pluginr'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-haml'
+Plugin 'tpope/vim-rails'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'pangloss/vim-javascript'
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'briancollins/vim-jst'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'Lokaltog/vim-powerline'
+"Plugin 'vim-ruby/vim-ruby'
+Plugin 'slim-template/vim-slim'
+Plugin 'sudo.vim'
+Plugin 'xml.vim'
+Plugin 'ZenCoding.vim'
 "swich from .cpp to .h 
-Bundle 'a.vim'
-Bundle 'ctags.vim'
-Bundle 'taglist.vim'
-Bundle 'winmanager'
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'grep.vim'
-Bundle 'DoxygenToolkit.vim'
+Plugin 'a.vim'
+Plugin 'ctags.vim'
+Plugin 'taglist.vim'
+Plugin 'winmanager'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'grep.vim'
+Plugin 'DoxygenToolkit.vim'
 
 
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
 
-filetype plugin indent on
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "auto completed
 "RUBY
-let g:rubycomplete_buffer_loading = 1
-let g:rubycomplete_classes_in_global = 1
-let g:rubycomplete_rails = 1
+"let g:rubycomplete_buffer_loading = 1
+"let g:rubycomplete_classes_in_global = 1
+"let g:rubycomplete_rails = 1
 
 "RUBY plugin
-autocmd FileType ruby compiler ruby
+"autocmd FileType ruby compiler ruby
 
 "autocmd vimenter * if !argc() | NERDTree | endif
 "autocmd VimEnter * NER
+
 
 set bsdir=buffer  
 set enc=utf-8  
@@ -151,6 +169,9 @@ imap <C-A> <C-C><c-p>
 :map <leader>t <c-p>
 :map <leader>b :CtrlPBuffer<CR>
 
+" Set syntastic plugin mapping
+let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_python_checkers = ['flake8']
 
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.jpg,*.png,*.gif,*.jpeg,.DS_Store  " MacOSX/Linux
