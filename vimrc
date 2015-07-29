@@ -2,7 +2,7 @@ syntax on
 " set color theme
 "colorscheme blackboard
 colorscheme desert
-"colorscheme busybee
+"colorscheme Tomorrow-Night 
 set guifont=Monaco:h18
 "highlight search word by Aaron
 set hlsearch
